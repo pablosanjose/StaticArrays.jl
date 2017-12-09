@@ -117,7 +117,7 @@ end
     end
     newsize = tuple(newsize...)
 
-    exprs = Array{Expr}(newsize)
+    @compat exprs = Array{Expr}(uninitialized, newsize)
     more = prod(newsize) > 0
     current_ind = ones(Int, length(newsize))
 
